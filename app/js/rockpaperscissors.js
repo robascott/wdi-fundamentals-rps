@@ -75,7 +75,67 @@ function playToFive() {
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
+    
+    var playerMove;
+    var computerMove;
+    var winner;
+    
+    while (playerWins < 5 && computerWins < 5) {
+        playerMove = getPlayerMove();
+        computerMove = getComputerMove();
+        winner = getWinner(playerMove, computerMove);
+        if (winner == "player") {
+            playerWins++;
+        } else if (winner == "computer") {
+            computerWins++;
+        }
+        console.log('\n====================================================');
+        console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+        if (winner == "tie") {
+            console.log('The result is a tie!' + '\n')
+        } else {
+            console.log('The ' + winner + ' wins!' + '\n')
+        }
+        
+        console.log('Player wins: ' + playerWins);
+        console.log('Computer wins: ' + computerWins);
+        console.log('====================================================\n');
+    }
+
     return [playerWins, computerWins];
 }
 
+function playTo(games) {
+    console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;  
+    var playerMove;
+    var computerMove;
+    var winner;
+    
+    while (playerWins < games && computerWins < games) {
+        playerMove = getPlayerMove();
+        computerMove = getComputerMove();
+        winner = getWinner(playerMove, computerMove);
+        if (winner == "player") {
+            playerWins++;
+        } else if (winner == "computer") {
+            computerWins++;
+        }
+        console.log('\n====================================================');
+        console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+        if (winner == "tie") {
+            console.log('The result is a tie!' + '\n')
+        } else {
+            console.log('The ' + winner + ' wins!' + '\n')
+        }
+        
+        console.log('Player wins: ' + playerWins);
+        console.log('Computer wins: ' + computerWins);
+        console.log('====================================================\n');
+    }
+
+    return [playerWins, computerWins];
+}
+
+playTo(3)
