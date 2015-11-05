@@ -137,5 +137,3 @@ function playTo(games) {
 
     return [playerWins, computerWins];
 }
-
-playTo(3)
